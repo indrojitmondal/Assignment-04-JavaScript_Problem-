@@ -11,6 +11,5 @@ function calculateTax(income, expenses) {
    return tax;
 
 }
-
-// const output = calculateTax(34000, 1753);
-// console.log(output);
+const output = calculateTax(34000, 1753);
+console.log(output);

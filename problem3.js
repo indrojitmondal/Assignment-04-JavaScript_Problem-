@@ -1,3 +1,18 @@
 function checkDigitsInName(name) {
-    //write your code here
+    
+    if(typeof name !== 'string')
+    {
+        return 'Invalid Input';
+    }
+    
+    for (const ch of name) {
+       if(!isNaN(ch)){
+             return 'true';
+       }
+    }
+    return 'false';
+    
+
 }
+const output = checkDigitsInName('indro');
+console.log(output);
