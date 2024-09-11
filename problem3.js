@@ -1,6 +1,10 @@
 function checkDigitsInName(name) {
+
+    if(typeof name ==='undefined'){
+        return 'Invalid Input';
+    }
     
-    if(typeof name !== 'string')
+    else if(typeof name !== 'string')
     {
         return 'Invalid Input';
     }
@@ -14,5 +18,5 @@ function checkDigitsInName(name) {
     
 
 }
-const output = checkDigitsInName('indro');
+const output = checkDigitsInName();
 console.log(output);

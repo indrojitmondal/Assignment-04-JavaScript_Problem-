@@ -1,5 +1,8 @@
 function calculateFinalScore(obj) {
-    if(typeof obj !=='object')
+    if( typeof obj === 'undefined'){
+        return 'Invalid Input'; 
+    }
+    else if(typeof obj !=='object' || Array.isArray(obj)===true)
     {
         return 'Invalid Input';
     }
@@ -21,7 +24,6 @@ function calculateFinalScore(obj) {
     
 }
 const output = calculateFinalScore(
-    { name: "Rajib", testScore: 15,  schoolGrade: 25, isFFamily : true  }
-    
+  
     );
 console.log(output);

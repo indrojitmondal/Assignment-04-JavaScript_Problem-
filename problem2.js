@@ -1,5 +1,8 @@
 function sendNotification(email) {
-    if(typeof email !=='string' || email.includes(' ')===true)
+    if (typeof email ==='undefined'){
+        return 'Invalid Email';
+    }
+    else if(typeof email !=='string' || email.includes(' ')===true)
     {
         
         return 'Invalid Email';
@@ -18,5 +21,5 @@ function sendNotification(email) {
     
     return username + ' ' + 'sent you an email from'+ ' '+domainName;
 }
-const output = sendNotification('indro.cse.bu@gmail.com');
+const output = sendNotification('hello.@gmail.com');
 console.log(output);

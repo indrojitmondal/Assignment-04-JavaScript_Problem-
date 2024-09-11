@@ -1,18 +1,24 @@
 function calculateTax(income, expenses) {
+    if(typeof income === 'undefined' || typeof expenses ==='undefined'){
+        return 'Invalid Input'; 
+    }
 
-    if( typeof income !=='number' || typeof expenses !== 'number' || isNaN(income)===true || isNaN(expenses) ===true || income<0 || expenses <0) 
-    {
-        return 'Invalid Input';
+   if( typeof income !=='number' || typeof expenses !== 'number' || isNaN(income)===true || isNaN(expenses) ===true || income<=0 || expenses <=0) 
+   {
+       return 'Invalid Input';
+   }
+   else if( expenses > income){
+    return 'Invalid Input';
+   }
+   tax= (income -expenses)*.20;
+   return tax;
+
+}
+function sendNotification(email) {
+    if (typeof email ==='undefined'){
+        return 'Invalid Email';
     }
-    else if( expenses > income){
-     return 'Invalid Input';
-    }
-    tax= (income -expenses)*.20;
-    return tax;
- 
- }
- function sendNotification(email) {
-    if(typeof email !=='string' || email.includes(' ')===true)
+    else if(typeof email !=='string' || email.includes(' ')===true)
     {
         
         return 'Invalid Email';
@@ -32,8 +38,12 @@ function calculateTax(income, expenses) {
     return username + ' ' + 'sent you an email from'+ ' '+domainName;
 }
 function checkDigitsInName(name) {
+
+    if(typeof name ==='undefined'){
+        return 'Invalid Input';
+    }
     
-    if(typeof name !== 'string')
+    else if(typeof name !== 'string')
     {
         return 'Invalid Input';
     }
@@ -48,7 +58,10 @@ function checkDigitsInName(name) {
 
 }
 function calculateFinalScore(obj) {
-    if(typeof obj !=='object')
+    if( typeof obj === 'undefined'){
+        return 'Invalid Input'; 
+    }
+    else if(typeof obj !=='object' || Array.isArray(obj)===true)
     {
         return 'Invalid Input';
     }
@@ -71,8 +84,11 @@ function calculateFinalScore(obj) {
 }
 function  waitingTime(waitingTimes  , serialNumber) {
    
+    if( typeof waitingTimes==='undefined' || typeof serialNumber === 'undefined'){
+        return 'Invalid Input'; 
+    }
    
-    if (Array.isArray(waitingTimes)===false|| typeof serialNumber !=='number' || isNaN(serialNumber)===true )
+    else if (Array.isArray(waitingTimes)===false|| typeof serialNumber !=='number' || isNaN(serialNumber)===true )
     {
         return 'Invalid Input';
     }
@@ -88,3 +104,8 @@ function  waitingTime(waitingTimes  , serialNumber) {
     return result;
 
 }
+
+
+
+
+

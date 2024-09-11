@@ -1,7 +1,10 @@
 function  waitingTime(waitingTimes  , serialNumber) {
    
+    if( typeof waitingTimes==='undefined' || typeof serialNumber === 'undefined'){
+        return 'Invalid Input'; 
+    }
    
-    if (Array.isArray(waitingTimes)===false|| typeof serialNumber !=='number' || isNaN(serialNumber)===true )
+    else if (Array.isArray(waitingTimes)===false|| typeof serialNumber !=='number' || isNaN(serialNumber)===true )
     {
         return 'Invalid Input';
     }
@@ -17,5 +20,5 @@ function  waitingTime(waitingTimes  , serialNumber) {
     return result;
 
 }
-const output = waitingTime([ 3, 5, 7, 11, 6 ], 10);
+const output = waitingTime(1,);
 console.log(output);
